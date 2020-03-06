@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import static org.assertj.core.api.Assertions.*;
 
 
 
@@ -27,14 +27,18 @@ public class YandexTest {
         webDriver.get("https://yandex.com/ncr");
         WebElement input = webDriver.findElement(By.name("text"));
         input.sendKeys("руддщ цкщдв",Keys.ENTER);
+        webDriver.findElement(By.xpath("//div[.=\"Hello, world!\"]"));
+        String tittle = webDriver.getTitle();
+        String titAct = "hello world";
         webDriver.quit();
 
 
     }
 
-//    @After
-//    public void driverOut(){
-
+    @After
+    public void driverOut() {
+        webDriver.quit();
+    }
     }
 
 
