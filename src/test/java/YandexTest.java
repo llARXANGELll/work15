@@ -1,4 +1,5 @@
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,12 +12,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class YandexTest {
 
+    private WebDriver webDriver;
+
+    @Before
+    public void initDriver(){
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        webDriver = new ChromeDriver();
+    }
 
 
     @Test
     public void yandexx() {
 
-        public WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://yandex.com/ncr");
         WebElement input = webDriver.findElement(By.name("text"));
         input.sendKeys("руддщ цкщдв",Keys.ENTER);
         webDriver.quit();
