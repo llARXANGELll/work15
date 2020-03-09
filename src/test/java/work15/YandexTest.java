@@ -1,6 +1,7 @@
 package work15;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -28,8 +29,6 @@ public class YandexTest {
         WebElement input = webDriver.findElement(By.name("text"));
         input.sendKeys("руддщ цкщдв",Keys.ENTER);
         webDriver.findElement(By.xpath("//div[.=\"Hello, world!\"]"));
-        webDriver.quit();
-
 
     }
 
