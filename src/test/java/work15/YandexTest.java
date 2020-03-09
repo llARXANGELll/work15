@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
 
 
 public class YandexTest {
@@ -25,10 +26,12 @@ public class YandexTest {
 
     @Test
     public void yandexx() {
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDriver.get("https://yandex.com/ncr");
         WebElement input = webDriver.findElement(By.name("text"));
         input.sendKeys("руддщ цкщдв",Keys.ENTER);
-        webDriver.findElement(By.xpath("//div[.=\"Hello, world!\"]"));
+        webDriver.findElement(By.name("hello world"));
+        String attribute = webDriver.findElement(By.name("text")).getAttribute("value");
 
     }
 
