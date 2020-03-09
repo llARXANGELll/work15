@@ -1,3 +1,5 @@
+package work15;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,8 +28,6 @@ public class YandexTest {
         WebElement input = webDriver.findElement(By.name("text"));
         input.sendKeys("руддщ цкщдв",Keys.ENTER);
         webDriver.findElement(By.xpath("//div[.=\"Hello, world!\"]"));
-        String tittle = webDriver.getTitle();
-        String titAct = "hello world";
         webDriver.quit();
 
 
