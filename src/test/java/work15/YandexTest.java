@@ -27,11 +27,11 @@ public class YandexTest {
     @Test
     public void yandexx() {
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        webDriver.get("https://yandex.com/ncr");
+        webDriver.get("https://yandex.ru");
         WebElement input = webDriver.findElement(By.name("text"));
         input.sendKeys("руддщ цкщдв",Keys.ENTER);
         webDriver.findElement(By.name("hello world"));
-        String attribute = webDriver.findElement(By.name("text")).getAttribute("value");
+        webDriver.getTitle().equals("hello world");
 
     }
 
