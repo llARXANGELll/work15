@@ -31,7 +31,7 @@ public class YandexTest {
         WebElement input = webDriver.findElement(By.name("text"));
         input.sendKeys("руддщ цкщдв",Keys.ENTER);
         webDriver.findElement(By.name("hello world"));
-        webDriver.getTitle().equals("hello world");
+        Assert.assertEquals(webDriver.getTitle(),("hello world"));
 
     }
 
