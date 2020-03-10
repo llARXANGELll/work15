@@ -32,7 +32,6 @@ public class YandexTest {
         input.sendKeys("руддщ цкщдв", Keys.ENTER);
         String search = webDriver.findElement(By.name("text")).getAttribute("value");
         Assert.assertEquals("hello world", search);
-
         Assert.assertEquals(webDriver.getTitle(), ("hello world — Яндекс: нашлось 2 млн результатов"));
 
     }
