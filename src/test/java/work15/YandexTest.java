@@ -18,7 +18,7 @@ public class YandexTest {
     private WebDriver webDriver;
 
     @Before
-    public void initDriver(){
+    public void initDriver() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         webDriver = new ChromeDriver();
     }
@@ -29,9 +29,11 @@ public class YandexTest {
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDriver.get("https://yandex.ru");
         WebElement input = webDriver.findElement(By.name("text"));
-        input.sendKeys("руддщ цкщдв",Keys.ENTER);
-        webDriver.findElement(By.name("hello world"));
-        Assert.assertEquals(webDriver.getTitle(),("hello world"));
+        input.sendKeys("руддщ цкщдв", Keys.ENTER);
+        String search = webDriver.findElement(By.name("text")).getAttribute("value");
+        Assert.assertEquals("hello world", search);
+
+        Assert.assertEquals(webDriver.getTitle(), ("hello world — Яндекс: нашлось 2 млн результатов"));
 
     }
 
@@ -39,7 +41,7 @@ public class YandexTest {
     public void driverOut() {
         webDriver.quit();
     }
-    }
+}
 
 
 
